@@ -39,18 +39,13 @@ function loginSalter(password, username=undefined) {
 }
 
 // Check if the username/password pair is in the credential database
-export const verifyUserPass = (db, user, pass) => {
-    return new Promise(async (resolve, reject) => {
-        // This function should check if the username and password entered matches
+
+// This function checks if the username and password entered matches
         // a user in the database and then return the username.
 
         // If the user is verified: return resolve(<username>);
         // If the user is not verified: return reject(<appropriate error message>);
 
-        // TODO (exercise 3): Replace the code below with the correct implementation
-
-        // plan
-        
         // scenarios given user-pass
         // ----------
         // * username dne in db
@@ -60,7 +55,11 @@ export const verifyUserPass = (db, user, pass) => {
 
         // rejection
         // * username or password is incorrect
+export const verifyUserPass = (db, user, pass) => {
+    return new Promise(async (resolve, reject) => {
 
+        
+        
         const saltAndPass = await loginSalter(pass, user);
 
         const salt = saltAndPass.salt;
@@ -82,6 +81,7 @@ export const verifyUserPass = (db, user, pass) => {
                     }
             }
         });
+        // Ex.
         //username: Sandy
         //pass: aSldErdA4%5$%
 
