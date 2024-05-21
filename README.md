@@ -2,9 +2,13 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 
 ## Getting Started
 
-First, run the development server:
+First, run the start the MySQL datbase and development server:
+
 
 ```bash
+
+service mysql start
+
 npm run dev
 # or
 yarn dev
